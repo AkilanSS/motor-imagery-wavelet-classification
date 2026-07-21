@@ -8,7 +8,7 @@ This documnetation essentially goes through my effort in understanding the datas
 ### About the dataset
 [Link to Dataset](https://archive.ics.uci.edu/dataset/230/planning+relax) contains 182 records of 12 coefficients which are obtained by applying wavelet packet transform in the 7-13Hz range over the time period when the task was done (Relaxed = 1, Planing = 2). 
 
-<b>The dataset has a massive class imbalance. 130 for relaxed and 52 for planning. Please note that 71.4% of data records belongs to planning</b>
+<b>The dataset has a massive class imbalance. 130 for relaxed and 52 for planning. Please note that 71.4% of data records belongs to relaxing</b>
 
 
 ### Objective
