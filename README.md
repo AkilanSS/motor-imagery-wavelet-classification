@@ -22,32 +22,29 @@ The objective here is, given a set of 12 features and a label, can we train a cl
 - Variation Inflation Factor shows that except c8, every coefficient has VIF > 10, which shows high redundancy.
 
 #### Pairplot
-![alt text](eeg_pairplot_full.png)
+![alt text](images/eeg_pairplot_full.png)
 
 #### Dimensionality Reduction Techniques
-![alt text](image.png)
+![alt text](images/image.png)
 
 ### Linear Discriminant Analysis
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 As we can see above, LDA cannot figure out the seperability between the two classes. 
 
 ### SVM
 - An SVM was run with parameters C = 10, gamma = 0.1 and polynomial kernel which was identified after a grid search.  
 - The pipeline was made to standardize the dataset, apply RandomOverSampler to oversample the minority class, and fed to the SVM with the above parameters
-- Now, a 10-Cross Fold Validation was done to obtain the following results, with the final accuracy of 47%, which is less than tossing a coin.
+- Now, a 5-Cross Fold Validation was done to obtain the following results, with the final accuracy of 61%, which is around tossing a coin.
+
 
 ```
-Final Confusion Matrix (Unbiased 10-Fold Outer Predict):
-[[97 33]
- [41 11]]
-
-Final Classification Report:
-                precision    recall  f1-score   support
-
- 1.0 (Relaxed)       0.70      0.75      0.72       130
-2.0 (Planning)       0.25      0.21      0.23        52
-
-      accuracy                           0.59       182
-     macro avg       0.48      0.48      0.48       182
-  weighted avg       0.57      0.59      0.58       182
+--- 5-Fold CV Performance (SVM + SMOTE) ---
+Accuracy  : 0.6104 (± 0.0427)
+Precision : 0.7370 (± 0.0363)
+Recall    : 0.7077 (± 0.0576)
+F1        : 0.7208 (± 0.0375)
+Roc_auc   : 0.4846 (± 0.0723)
+Confusion Matrix:
+[[92 38]
+ [33 19]]
 ```
